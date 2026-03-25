@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://challenges/global/challenge_data.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+my_id = "chal_hoard_master"
+unlocked_by_default = false
+name = "CHAL_HOARD_MASTER"
+tier = 0
+value = 5
+effects = [  ]
+tracking_text = ""
+is_lockable = true
+is_cursed = false
+curse_factor = 0.0
+description = "CHAL_HOARD_MASTER_DESC"
+reward_type = 8
+number = 0
+stat = ""
+additional_args = [  ]

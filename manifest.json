@@ -1,0 +1,73 @@
+{
+	"name": "HoardMode",
+	"namespace": "PapiLeem",
+	"version_number": "1.1.0",
+	"description": "Adds Hoard Mode - a toggle on the difficulty selection page. Configurable enemy multipliers, kill counter HUD, and challenges.",
+	"website_url": "",
+	"dependencies": [],
+	"extra": {
+		"godot": {
+			"incompatibilities": [],
+			"optional_dependencies": [],
+			"authors": [
+				"PapiLeem"
+			],
+			"compatible_mod_loader_version": ["6.2.0"],
+			"compatible_game_version": ["1.1.13.1"],
+			"config_schema": {
+				"type": "object",
+				"properties": {
+					"enemy_count_percent": {
+						"type": "integer",
+						"title": "Enemy Count Bonus (%)",
+						"description": "Extra enemies spawned. 400 = 5x total",
+						"default": 400,
+						"minimum": 50,
+						"maximum": 900
+					},
+					"enemy_hp_percent": {
+						"type": "integer",
+						"title": "Enemy HP Modifier (%)",
+						"description": "Enemy health change. -40 = 60% HP",
+						"default": -40,
+						"minimum": -80,
+						"maximum": 0
+					},
+					"enemy_damage_percent": {
+						"type": "integer",
+						"title": "Enemy Damage Modifier (%)",
+						"description": "Enemy damage change. -20 = 80% damage",
+						"default": -20,
+						"minimum": -50,
+						"maximum": 0
+					},
+					"materials_percent": {
+						"type": "integer",
+						"title": "Materials Drop Modifier (%)",
+						"description": "Materials drop change. -40 = 60% drops",
+						"default": -40,
+						"minimum": -80,
+						"maximum": 0
+					},
+					"xp_percent": {
+						"type": "integer",
+						"title": "XP Gain Modifier (%)",
+						"description": "XP gain change. -40 = 60% XP",
+						"default": -40,
+						"minimum": -80,
+						"maximum": 0
+					},
+					"max_enemies_multiplier": {
+						"type": "number",
+						"title": "Max Enemies Cap Multiplier",
+						"description": "Multiplier for the max concurrent enemies cap",
+						"default": 5.0,
+						"minimum": 1.5,
+						"maximum": 10.0
+					}
+				}
+			},
+			"tags": ["Gameplay"]
+		}
+	}
+}
