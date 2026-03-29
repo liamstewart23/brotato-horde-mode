@@ -9,10 +9,11 @@ A mod for the game [Brotato](https://store.steampowered.com/app/1942280/Brotato/
 Toggle Horde Mode on the difficulty selection page. When enabled:
 
 - **Up to 10x enemy count** — Quick-select buttons for 2x, 3x, 5x, or 10x
-- **-40% enemy HP**
-- **-20% enemy damage**
-- **-40% materials drops**
-- **-40% XP gain**
+- **-15% enemy HP**
+- **-10% enemy damage**
+- **+20% enemy speed**
+- **-50% materials drops**
+- **-50% XP gain**
 
 All values are configurable via ModLoader config.
 

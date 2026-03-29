@@ -7,8 +7,8 @@ func on_group_spawn_timing_reached(group_data: WaveGroupData) -> void :
 
 	var max_enemies = int(_current_wave_data.max_enemies + ((RunData.get_player_count() - 1) * (_current_wave_data.max_enemies / 8.0)))
 
-	if RunData.is_hoard_mode:
-		var mult = RunData.hoard_config.get("max_enemies_multiplier", 2.5)
+	if RunData.is_horde_mode:
+		var mult = RunData.horde_config.get("max_enemies_multiplier", 2.5)
 		max_enemies = int(max_enemies * mult)
 
 	if enemies.size() > max_enemies:

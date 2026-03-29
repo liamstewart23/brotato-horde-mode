@@ -4,17 +4,17 @@
 
 [resource]
 script = ExtResource( 1 )
-my_id = "chal_hoard_survivor"
+my_id = "chal_horde_master"
 unlocked_by_default = false
-name = "CHAL_HOARD_SURVIVOR"
+name = "CHAL_HORDE_MASTER"
 tier = 0
-value = 20
+value = 5
 effects = [  ]
 tracking_text = ""
 is_lockable = true
 is_cursed = false
 curse_factor = 0.0
-description = "CHAL_HOARD_SURVIVOR_DESC"
+description = "CHAL_HORDE_MASTER_DESC"
 reward_type = 8
 number = 0
 stat = ""

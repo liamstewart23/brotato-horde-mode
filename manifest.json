@@ -1,8 +1,8 @@
 {
-	"name": "HoardMode",
+	"name": "HordeMode",
 	"namespace": "PapiLeem",
 	"version_number": "1.1.0",
-	"description": "Adds Hoard Mode - a toggle on the difficulty selection page with 2x, 3x, 5x, or 10x enemy multipliers, kill counter HUD, and challenges.",
+	"description": "Adds Horde Mode - a toggle on the difficulty selection page with 2x, 3x, 5x, or 10x enemy multipliers, kill counter HUD, and challenges.",
 	"website_url": "",
 	"dependencies": [],
 	"extra": {
@@ -28,32 +28,40 @@
 					"enemy_hp_percent": {
 						"type": "integer",
 						"title": "Enemy HP Modifier (%)",
-						"description": "Enemy health change. -40 = 60% HP",
-						"default": -40,
+						"description": "Enemy health change. -15 = 85% HP",
+						"default": -15,
 						"minimum": -80,
 						"maximum": 0
 					},
 					"enemy_damage_percent": {
 						"type": "integer",
 						"title": "Enemy Damage Modifier (%)",
-						"description": "Enemy damage change. -20 = 80% damage",
-						"default": -20,
+						"description": "Enemy damage change. -10 = 90% damage",
+						"default": -10,
 						"minimum": -50,
 						"maximum": 0
+					},
+					"enemy_speed_percent": {
+						"type": "integer",
+						"title": "Enemy Speed Modifier (%)",
+						"description": "Enemy speed change. 20 = 120% speed",
+						"default": 20,
+						"minimum": 0,
+						"maximum": 100
 					},
 					"materials_percent": {
 						"type": "integer",
 						"title": "Materials Drop Modifier (%)",
-						"description": "Materials drop change. -40 = 60% drops",
-						"default": -40,
+						"description": "Materials drop change. -50 = 50% drops",
+						"default": -50,
 						"minimum": -80,
 						"maximum": 0
 					},
 					"xp_percent": {
 						"type": "integer",
 						"title": "XP Gain Modifier (%)",
-						"description": "XP gain change. -40 = 60% XP",
-						"default": -40,
+						"description": "XP gain change. -50 = 50% XP",
+						"default": -50,
 						"minimum": -80,
 						"maximum": 0
 					},

@@ -2,9 +2,9 @@ extends "res://main.gd"
 
 
 func _on_EndWaveTimer_timeout() -> void :
-	if RunData.is_hoard_mode:
-		if RunData._chal_hoard_endurance_hash != 0 and RunData.is_endless_run and RunData.current_wave >= 30:
-			ChallengeService.complete_challenge(RunData._chal_hoard_endurance_hash)
+	if RunData.is_horde_mode:
+		if RunData._chal_horde_endurance_hash != 0 and RunData.is_endless_run and RunData.current_wave >= 30:
+			ChallengeService.complete_challenge(RunData._chal_horde_endurance_hash)
 
 	._on_EndWaveTimer_timeout()
 

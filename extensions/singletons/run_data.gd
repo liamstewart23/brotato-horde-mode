@@ -1,18 +1,19 @@
 extends "res://singletons/run_data.gd"
 
-var is_hoard_mode: bool = false
-var hoard_config: Dictionary = {
+var is_horde_mode: bool = false
+var horde_config: Dictionary = {
 	"enemy_count_percent": 400,
-	"enemy_hp_percent": -40,
-	"enemy_damage_percent": -20,
-	"materials_percent": -40,
-	"xp_percent": -40,
+	"enemy_hp_percent": -15,
+	"enemy_damage_percent": -10,
+	"enemy_speed_percent": 20,
+	"materials_percent": -50,
+	"xp_percent": -50,
 	"max_enemies_multiplier": 5.0,
 }
-var _chal_hoard_survivor_hash: int = 0
-var _chal_hoard_slayer_hash: int = 0
-var _chal_hoard_master_hash: int = 0
-var _chal_hoard_endurance_hash: int = 0
+var _chal_horde_survivor_hash: int = 0
+var _chal_horde_slayer_hash: int = 0
+var _chal_horde_master_hash: int = 0
+var _chal_horde_endurance_hash: int = 0
 
 
 func _is_valid_player_index(player_index: int) -> bool:
@@ -50,42 +51,42 @@ func get_player_current_health(player_index: int) -> int:
 
 
 func reset(restart: bool = false) -> void :
-	var was_hoard = is_hoard_mode
+	var was_horde = is_horde_mode
 	.reset(restart)
 	if restart:
-		is_hoard_mode = was_hoard
+		is_horde_mode = was_horde
 	else:
-		is_hoard_mode = false
+		is_horde_mode = false
 
 
 func get_state() -> Dictionary:
 	var state = .get_state()
-	state["is_hoard_mode"] = is_hoard_mode
+	state["is_horde_mode"] = is_horde_mode
 	return state
 
 
 func resume_from_state(state: Dictionary) -> void :
 	.resume_from_state(state)
-	is_hoard_mode = state.get("is_hoard_mode", false)
+	is_horde_mode = state.get("is_horde_mode", false)
 
 
 func apply_run_won() -> void :
 	.apply_run_won()
-	if not is_hoard_mode:
+	if not is_horde_mode:
 		return
 
-	if _chal_hoard_survivor_hash != 0:
-		ChallengeService.complete_challenge(_chal_hoard_survivor_hash)
+	if _chal_horde_survivor_hash != 0:
+		ChallengeService.complete_challenge(_chal_horde_survivor_hash)
 
-	if _chal_hoard_slayer_hash != 0 and current_difficulty >= 5:
-		ChallengeService.complete_challenge(_chal_hoard_slayer_hash)
+	if _chal_horde_slayer_hash != 0 and current_difficulty >= 5:
+		ChallengeService.complete_challenge(_chal_horde_slayer_hash)
 
-	if _chal_hoard_master_hash != 0:
+	if _chal_horde_master_hash != 0:
 		var char_hash = get_player_character(0).get_my_id_hash()
-		if not ProgressData.data.has("hoard_characters_won"):
-			ProgressData.data["hoard_characters_won"] = []
-		var won_chars: Array = ProgressData.data["hoard_characters_won"]
+		if not ProgressData.data.has("horde_characters_won"):
+			ProgressData.data["horde_characters_won"] = []
+		var won_chars: Array = ProgressData.data["horde_characters_won"]
 		if not won_chars.has(char_hash):
 			won_chars.append(char_hash)
 		if won_chars.size() >= 5:
-			ChallengeService.complete_challenge(_chal_hoard_master_hash)
+			ChallengeService.complete_challenge(_chal_horde_master_hash)
