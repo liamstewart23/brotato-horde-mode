@@ -1,3 +1,5 @@
+<img width="500" height="500" alt="horde-mode" src="https://github.com/user-attachments/assets/42782fd2-6019-40a5-9cc0-df0683dc6bc0" />
+
 # Brotato - Horde Mode
 
 A mod for the game [Brotato](https://store.steampowered.com/app/1942280/Brotato/) that adds a toggleable game mode flooding the screen with enemies. Combine it with any difficulty level for chaotic, rebalanced runs.
